@@ -16,6 +16,11 @@ interface IObjKeys {
   [key: string]: string;
 }
 
+type ReviewType = {
+  id: number;
+  text: string;
+};
+
 // Complex types (examples)
 // type CategoryNames = ["startup", "business", "economy", "technology"];
 

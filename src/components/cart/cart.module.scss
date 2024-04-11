@@ -1,0 +1,42 @@
+@use "../../scss/utils" as *;
+
+.root {
+  padding-top: rem(243);
+}
+
+.container {
+  border-radius: rem(15);
+  padding: rem(10);
+  padding-top: rem(14);
+  padding-left: rem(14);
+  background-color: var(--light-gray-color);
+}
+
+.title {
+  margin: 0;
+  margin-bottom: rem(18);
+  font: var(--title-font);
+}
+
+.products {
+  list-style: none;
+  margin: 0;
+  margin-bottom: rem(15);
+  padding: 0;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 10.7fr 3fr 22fr;
+  gap: rem(5);
+
+  &:not(:last-child) {
+    margin-bottom: rem(13);
+  }
+}
+
+.data {
+  align-self: self-start;
+  margin: 0;
+  font: var(--body-font);
+}

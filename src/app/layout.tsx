@@ -1,8 +1,8 @@
 import React from "react";
 
 import {
-  //   Header,
-  AuthProvider,
+  Header,
+  // AuthProvider,
   StoreProvider,
   //   Footer,
 
@@ -22,13 +22,13 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
     <html lang="en">
       <body>
         <StoreProvider>
-          <AuthProvider>
-            {/* <ToastLayout /> */}
-            {/* <ScrollToTop /> */}
-            {/* <Header /> */}
-            {children}
-            {/* <Footer /> */}
-          </AuthProvider>
+          {/* <AuthProvider> */}
+          {/* <ToastLayout /> */}
+          {/* <ScrollToTop /> */}
+          <Header />
+          {children}
+          {/* <Footer /> */}
+          {/* </AuthProvider> */}
         </StoreProvider>
       </body>
     </html>

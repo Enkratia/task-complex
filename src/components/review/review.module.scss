@@ -1,0 +1,90 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+@use "../../scss/utils" as *;
+
+.root {
+  overflow: visible;
+  padding-top: rem(20);
+  padding-right: rem(26);
+  padding-left: rem(27);
+  height: 100%;
+  max-height: rem(611);
+  word-break: break-word;
+  transition: height 0.3s, max-height 0.3s;
+
+  &Wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: rem(15);
+    height: 100%;
+    max-height: calc(rem(611) + rem(40));
+    background-color: var(--light-gray-color);
+    transition: height 0.3s, max-height 0.3s;
+  }
+
+
+  // **
+  h1 {
+    font: var(--title-font);
+  }
+
+  p {
+    font: var(--body-font);
+  }
+
+  b {
+    font: var(--body-bold-font);
+  }
+}
+
+.more {
+  position: relative;
+  border: none;
+  padding: 0;
+  font-size: rem(40);
+  line-height: 0;
+  background-color: transparent;
+  opacity: 0;
+  visibility: clip;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &Wrapper {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    z-index: var(--z-up);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(40);
+    text-align: center;
+    background: linear-gradient(transparent 1%, var(--light-gray-color) 60%, var(--light-gray-color) 100%);
+  }
+
+  &Visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    &::before {
+      content: "Развернуть";
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      border-radius: rem(15);
+      padding-block: rem(8);
+      padding-inline: rem(12);
+      font: var(--tooltip-font);
+      font-size: rem(13);
+      color: var(--light-color);
+      background-color: var(--background-color);
+    }
+
+    &[data-review-more-active="true"] {
+      &::before {
+        content: "Свернуть";
+      }
+    }
+  }
+}

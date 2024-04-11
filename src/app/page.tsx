@@ -1,20 +1,21 @@
 import React from "react";
 import { Metadata } from "next";
 
-// import { Hero } from "../components";
+import { Cart, Reviews } from "../components";
 
 import cs from "../scss/helpers.module.scss";
 
-// export const metadata: Metadata = {
-//   title: "",
-// };
+export const metadata: Metadata = {
+  title: "Тестовое задание",
+};
 
 const Home: React.FC = () => {
   return (
     <main>
-      <h1 className={cs.srOnly}></h1>
+      <h1 className={cs.srOnly}>Тестовое задание</h1>
 
-      {/* <Hero /> */}
+      <Reviews />
+      <Cart />
     </main>
   );
 };

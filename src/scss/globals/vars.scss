@@ -5,6 +5,10 @@
   // Colors
   --black-color: #000;
   --white-color: #fff;
+  --light-color: #f0f0f0;
+  --light-gray-color: #d9d9d9;
+  --gray-color: #777;
+  --background-color: #222;
 
   // **
   --success-color: #03cea5;
@@ -20,13 +24,13 @@
   // --black-filter: invert(13%) sepia(12%) saturate(1459%) hue-rotate(196deg) brightness(93%) contrast(94%);
 
   // Fonts
-  // --display-font: 700 3.5rem / 114% "Sen", sans-serif; // 56
-  // --h1-font: 700 3rem / 133% "Sen", sans-serif; // 48
-  // --h2-font: 700 2.25rem / 133% "Sen", sans-serif; // 36
-  // --h3-font: 700 1.75rem / 142% "Sen", sans-serif; // 28
-  // --h4-font: 700 1.5rem / 133% "Sen", sans-serif; // 24
-  // --h5-font: 700 1.25rem / 160% "Sen", sans-serif; // 20
-  // --h6-font: 700 1rem / 150% "Sen", sans-serif; // 16
+  --header-font: 400 6rem / 100% "Inter", sans-serif; // 96
+  --title-font: 400 2.25rem / 100% "Inter", sans-serif; // 36
+  --body-font: 400 1.5rem / 100% "Inter", sans-serif; // 24
+  --body-bold-font: 700 1.5rem / 100% "Inter", sans-serif; // 24
+
+  // **
+  --tooltip-font: 400 0.8125rem / 100% "Inter", sans-serif; // 13
 
   // **
   --validation-font: 500 0.75rem / 228% "Sen", sans-serif; // 14 (указать тут?)

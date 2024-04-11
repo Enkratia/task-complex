@@ -1,72 +1,67 @@
-// "use server";
+"use server";
 
-// import { getSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 
-// import type {
-//   GetContactUsQueriesType,
-//   GetPostsType,
-//   GetUsersType,
-// } from "../redux/backendApi/types";
-// import type { TagTypesType } from "../redux/backendApi";
+// import type { GetPostsType } from "../redux/backendApi/types";
+import type { TagTypesType } from "../redux/backendApi";
 
-// import { BACKEND_URL } from "../utils/constants";
+import { BACKEND_URL } from "../utils/constants";
 
-// const fetchApi = async (query: string, tags?: TagTypesType[], revalidateTime?: number) => {
-//   const args = `${BACKEND_URL}/${query}`;
-//   const revalidate = process.env.NODE_ENV === "production" ? revalidateTime ?? 600 : 60;
+const fetchApi = async (query: string, tags?: TagTypesType[], revalidateTime?: number) => {
+  const args = `${BACKEND_URL}/${query}`;
+  const revalidate = process.env.NODE_ENV === "production" ? revalidateTime ?? 600 : 60;
 
-//   // new getServerSession is making every route dynamical because it uses cookies()
-//   const session = await getSession();
-//   const token = session?.backendTokens?.accessToken;
+  const session = await getSession();
+  const token = session?.backendTokens?.accessToken;
 
-//   let headers = {};
+  let headers = {};
 
-//   if (token) {
-//     headers = {
-//       authorization: `Bearer ${token}`,
-//     };
-//   }
+  if (token) {
+    headers = {
+      authorization: `Bearer ${token}`,
+    };
+  }
 
-//   try {
-//     const response = await fetch(args, {
-//       next: {
-//         tags,
-//         revalidate,
-//       },
-//       headers,
-//     });
+  try {
+    const response = await fetch(args, {
+      next: {
+        tags,
+        revalidate,
+      },
+      headers,
+    });
 
-//     if (!response.ok) {
-//       return {
-//         isError: true,
-//         args,
-//       };
-//     }
+    if (!response.ok) {
+      return {
+        isError: true,
+        args,
+      };
+    }
 
-//     const data = await response.json();
+    const data = await response.json();
 
-//     return {
-//       isError: false,
-//       data,
-//       args,
-//     };
-//   } catch (error) {
-//     return {
-//       isError: true,
-//       args,
-//     };
-//   }
-// };
+    return {
+      isError: false,
+      data,
+      args,
+    };
+  } catch (error) {
+    return {
+      isError: true,
+      args,
+    };
+  }
+};
 
 // Common
-// export const fetchCategoryDescriptionQuery = async () => {
-//   const res = await fetchApi("category-description");
+export const fetchReviewsQuery = async () => {
+  const res = await fetchApi("reviews");
 
-//   return {
-//     ...res,
-//     data: res?.data?.[0] as CategoryDescriptionType,
-//   };
-// };
+  return {
+    ...res,
+    data: res?.data as ReviewType[],
+  };
+};
 
 // export const fetchPostsQuery = async (request: string) => {
 //   const res = await fetchApi(`posts${request}`);

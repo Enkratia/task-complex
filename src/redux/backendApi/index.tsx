@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { getSession } from "next-auth/react";
 
 import { BACKEND_URL, IS_DEV } from "../../utils/constants";
-// import { revalidateTagsAction } from "../../utils/actions";
+import { revalidateTagsAction } from "../../utils/actions";
 
 // **
 // const invalidateFetchTags = async (tags: TagTypesType[]) => {
