@@ -24,11 +24,18 @@
 
   // **
   h1 {
+    margin: 0;
+    margin-bottom: rem(20);
     font: var(--title-font);
   }
 
   p {
-    font: var(--body-font);
+    margin: 0;
+    font: var(--body-descr-font);
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
   }
 
   b {

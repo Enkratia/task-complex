@@ -1,0 +1,68 @@
+@use "../../../scss/utils/" as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: rem(2) solid var(--skeleton-color);
+  border-radius: rem(15);
+  padding-block: rem(8);
+  padding-inline: rem(10);
+  height: 100%;
+  text-align: center;
+}
+
+.image {
+  &Wrapper {
+    overflow: hidden;
+    margin-bottom: rem(6);
+    border-radius: rem(15);
+    padding-top: 130%;
+  }
+}
+
+.text {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: rem(4);
+  border-radius: rem(15);
+  width: 100%;
+  height: rem(36);
+}
+
+.descr {
+  flex-grow: 1;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: rem(12);
+  border-radius: rem(15);
+  width: 100%;
+  height: rem(232);
+}
+
+.price {
+  display: block;
+  overflow: hidden;
+  margin-bottom: rem(38);
+  border-radius: rem(15);
+  height: rem(36);
+}
+
+.tooltips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  overflow: hidden;
+  border-radius: rem(15);
+  width: 100%;
+  height: rem(68);
+}

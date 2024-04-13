@@ -1,3 +1,3 @@
 export * from "./alertBoilerplate";
 
-export * from "./alertDeleteExample";
+export * from "./alertErrorPost";

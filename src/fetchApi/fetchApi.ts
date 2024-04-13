@@ -1,8 +1,8 @@
 "use server";
 
-import { getSession } from "next-auth/react";
+// import { getSession } from "next-auth/react";
 
-// import type { GetPostsType } from "../redux/backendApi/types";
+import type { GetProductsType } from "../redux/backendApi/types";
 import type { TagTypesType } from "../redux/backendApi";
 
 import { BACKEND_URL } from "../utils/constants";
@@ -11,16 +11,16 @@ const fetchApi = async (query: string, tags?: TagTypesType[], revalidateTime?: n
   const args = `${BACKEND_URL}/${query}`;
   const revalidate = process.env.NODE_ENV === "production" ? revalidateTime ?? 600 : 60;
 
-  const session = await getSession();
-  const token = session?.backendTokens?.accessToken;
+  // const session = await getSession();
+  // const token = session?.backendTokens?.accessToken;
 
-  let headers = {};
+  // let headers = {};
 
-  if (token) {
-    headers = {
-      authorization: `Bearer ${token}`,
-    };
-  }
+  // if (token) {
+  //   headers = {
+  //     authorization: `Bearer ${token}`,
+  //   };
+  // }
 
   try {
     const response = await fetch(args, {
@@ -28,7 +28,7 @@ const fetchApi = async (query: string, tags?: TagTypesType[], revalidateTime?: n
         tags,
         revalidate,
       },
-      headers,
+      // headers,
     });
 
     if (!response.ok) {
@@ -63,11 +63,11 @@ export const fetchReviewsQuery = async () => {
   };
 };
 
-// export const fetchPostsQuery = async (request: string) => {
-//   const res = await fetchApi(`posts${request}`);
+export const fetchProductsQuery = async (request: string) => {
+  const res = await fetchApi(`products${request}`);
 
-//   return {
-//     ...res,
-//     data: res?.data as GetPostsType,
-//   };
-// };
+  return {
+    ...res,
+    data: res?.data as GetProductsType,
+  };
+};

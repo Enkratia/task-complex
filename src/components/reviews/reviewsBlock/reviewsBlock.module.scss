@@ -9,6 +9,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @include bp-down("678") {
+    flex-wrap: wrap;
+  }
 }
 
 .item {
@@ -16,5 +20,18 @@
 
   &:first-child {
     margin-right: rem(34);
+
+    @include bp-down("768") {
+      margin-right: rem(20);
+    }
+
+    @include bp-down("678") {
+      margin-right: revert;
+      margin-bottom: rem(20);
+    }
+  }
+
+  @include bp-down("678") {
+    width: 100%;
   }
 }

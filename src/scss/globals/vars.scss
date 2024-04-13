@@ -18,19 +18,20 @@
   --skeleton-color: #ccc;
   --skeleton-border-color: rgb(110 111 120 / 10%);
 
-  // Filters
-  // --featured-filter: invert(14%) sepia(7%) saturate(2165%) hue-rotate(198deg) brightness(89%) contrast(90%);
-  // --mediumgray-filter: invert(48%) sepia(10%) saturate(272%) hue-rotate(196deg) brightness(87%) contrast(87%);
-  // --black-filter: invert(13%) sepia(12%) saturate(1459%) hue-rotate(196deg) brightness(93%) contrast(94%);
-
   // Fonts
   --header-font: 400 6rem / 100% "Inter", sans-serif; // 96
   --title-font: 400 2.25rem / 100% "Inter", sans-serif; // 36
   --body-font: 400 1.5rem / 100% "Inter", sans-serif; // 24
+
+  // **
+  --title-medium-font: 500 2.25rem / 100% "Inter", sans-serif; // 36
+  --body-descr-font: 400 1.5rem / 121% "Inter", sans-serif; // 24
   --body-bold-font: 700 1.5rem / 100% "Inter", sans-serif; // 24
 
   // **
+  --tooltip-big-font: 400 1rem / 100% "Inter", sans-serif; // 16
   --tooltip-font: 400 0.8125rem / 100% "Inter", sans-serif; // 13
+
 
   // **
   --validation-font: 500 0.75rem / 228% "Sen", sans-serif; // 14 (указать тут?)
@@ -55,9 +56,6 @@
   --popup-animation: popup-animation 0.2s ease forwards;
   --skeleton-animation: skeleton-animation 1s linear infinite;
   --hide-on-resize-animation: hide-on-resize-animation 0.3s;
-
-  // Gradients
-  // --overlay-gradient: radial-gradient(80.99% 71.93% at 74.58% 0%, rgba(0 0 0 / 40%) 0%, rgba(0 0 0 / 60%) 100%);
 }
 
 // **

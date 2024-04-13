@@ -5,9 +5,10 @@
   flex-direction: column;
   align-items: center;
   grid-column: 1 / -1;
-  padding-top: rem(120);
+  padding-top: rem(20);
   padding-bottom: rem(120);
   text-align: center;
+  color: var(--light-color);
 
   svg {
     margin-bottom: rem(20);

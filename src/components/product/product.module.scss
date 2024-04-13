@@ -1,0 +1,147 @@
+@use "../../scss/utils" as *;
+
+.root {
+  position: relative;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: rem(15);
+  padding-block: rem(8);
+  padding-inline: rem(10);
+  height: 100%;
+  max-width: rem(360);
+  word-break: break-word;
+  text-align: center;
+  background-color: var(--light-gray-color);
+  transform: translateX(-50%);
+}
+
+.image {
+  object-fit: cover;
+
+  &Wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: rem(6);
+    border-radius: rem(15);
+    padding-top: 130%;
+
+    @include bp-down("992") {
+      padding-top: 117%
+    }
+  }
+}
+
+.text {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: rem(4);
+  font: var(--title-font);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.descr {
+  @include line-clamp(24, 8);
+
+  flex-grow: 1;
+  margin: 0;
+  margin-bottom: rem(12);
+  font: var(--body-descr-font);
+  text-align: initial;
+
+  @include bp-down("500") {
+    margin-bottom: rem(2);
+  }
+}
+
+.price {
+  display: block;
+  margin-bottom: rem(38);
+  font: var(--title-font);
+
+  @include bp-down("768") {
+    margin-bottom: rem(24);
+  }
+
+  @include bp-down("500") {
+    margin-bottom: rem(16);
+  }
+}
+
+.tooltips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include bp-down("992") {
+    flex-wrap: wrap;
+  }
+
+  @include bp-down("500") {
+    flex-wrap: revert;
+  }
+}
+
+.tooltip {
+  padding-inline: rem(24);
+  font: var(--title-font);
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-right: rem(6);
+  }
+
+  &:last-child {
+    padding-inline: rem(21)
+  }
+
+  @include bp-down("992") {
+    &:nth-child(2) {
+      order: 1;
+      margin-right: revert;
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      margin-right: revert;
+      margin-bottom: rem(8);
+      width: calc(50% - rem(6));
+    }
+
+    &:nth-child(3) {
+      margin-right: revert;
+      margin-bottom: rem(8);
+      width: calc(50% - rem(6));
+    }
+  }
+
+  @include bp-down("500") {
+    &:nth-child(2) {
+      order: revert;
+      margin-right: rem(6);
+    }
+
+    &:nth-child(1) {
+      margin-right: rem(6);
+      margin-bottom: revert;
+    }
+
+    &:nth-child(3) {
+      margin-right: revert;
+      margin-bottom: revert;
+    }
+  }
+}
+
+.btn {
+  padding-inline: rem(15);
+  width: 100%;
+  text-align: center;
+}

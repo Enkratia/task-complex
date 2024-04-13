@@ -5,23 +5,15 @@ import cs from "../../../scss/helpers.module.scss";
 type FormSubmitProps = {
   classNameWrapper: string;
   classNameBtn: string;
-  requestStatus: Record<string, string>;
   text: string;
 };
 
-export const FormSubmit: React.FC<FormSubmitProps> = ({
-  classNameWrapper,
-  classNameBtn,
-  requestStatus,
-  text,
-}) => {
+export const FormSubmit: React.FC<FormSubmitProps> = ({ classNameWrapper, classNameBtn, text }) => {
   return (
-    <div className={`${classNameWrapper} ${cs.btnWrapper}`} {...requestStatus}>
+    <div className={`${classNameWrapper} ${cs.btnWrapper}`}>
       <button className={classNameBtn} type="submit">
         {text}
       </button>
-
-      <strong className={cs.btnMessage}>{Object.values(requestStatus)[0]}</strong>
     </div>
   );
 };

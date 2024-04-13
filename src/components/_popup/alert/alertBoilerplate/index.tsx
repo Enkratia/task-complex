@@ -26,7 +26,7 @@ export const AlertBoilerplatePopup: React.FC<AlertPopupProps> = ({ onAlertClick,
           <h1 className={`${s.title} ${cs.title}`}>{title}</h1>
 
           <button className={`${s.btn} ${cs.btn}`} onClick={onAlertClick}>
-            Ok
+            ок
           </button>
         </div>
       </div>

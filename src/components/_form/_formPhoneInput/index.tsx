@@ -45,7 +45,7 @@ export const FormPhoneInput: React.FC<FormPhoneInputProps> = ({
         defaultValue={defaultValue}
       />
 
-      <strong className={cs.inputMessage}>{error}</strong>
+      {/* <strong className={cs.inputMessage}>{error}</strong> */}
     </div>
   );
 };

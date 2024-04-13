@@ -9,13 +9,23 @@
   width: 100%;
   height: 100%;
   background-color: var(--background-color);
+
+  @include bp-down("container-wide") {
+    padding-top: calc(rem(0.64) + 3.7vw); // 58>14(1546>360)
+    padding-bottom: rem(52);
+  }
 }
 
 .container {
   border-radius: rem(15);
   padding-top: rem(8);
   padding-bottom: rem(28);
-  background-color: var(--gray-color)
+  background-color: var(--gray-color);
+
+  @include bp-down("container") {
+    padding-top: rem(12);
+    padding-bottom: rem(16);
+  }
 }
 
 .title {
@@ -23,4 +33,8 @@
   font: var(--header-font);
   text-align: center;
   color: var(--light-color);
+
+  @include bp-down("container-wide") {
+    font-size: calc(rem(21.75) + 5.07vw); // 96>40(1546>360)
+  }
 }

@@ -5,21 +5,51 @@ const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === "tr
 
 const nextConfig = {
   output: "standalone",
-  transpilePackages: [],
+  transpilePackages: [
+    "@hookform/resolvers",
+    "@reduxjs/toolkit",
+    "@svgr/webpack",
+    "next",
+    "normalize.css",
+    "react",
+    "react-dom",
+    "react-hook-form",
+    "react-imask",
+    "react-redux",
+    "sharp",
+    "sonner",
+    "use-immer",
+    "immer",
+    "zod",
+    "react-intersection-observer",
+    "sanitize-html",
+  ],
   images: {
     minimumCacheTTL: 31540000000,
     remotePatterns: [
-      // {
-      //   protocol: "https",
-      //   hostname: "i.postimg.cc",
-      //   port: "",
-      //   pathname: "/**",
-      // },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3001",
-        pathname: "/backend-api/images/**",
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        port: "",
+        pathname: "/shopping/**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn1.gstatic.com",
+        port: "",
+        pathname: "/shopping/**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn2.gstatic.com",
+        port: "",
+        pathname: "/shopping/**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn3.gstatic.com",
+        port: "",
+        pathname: "/shopping/**",
       },
     ],
   },
@@ -46,5 +76,4 @@ const nextConfig = {
   },
 };
 
-// export default nextConfig;
 export default withBundleAnalyzer(nextConfig);

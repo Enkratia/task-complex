@@ -9,7 +9,7 @@
   border-radius: 50%;
   width: rem(42);
   height: rem(42);
-  background-color: var(--yellow-color);
+  background-color: var(--light-color);
   opacity: 0;
   transform: scale(0.5);
   transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
@@ -40,7 +40,7 @@
   }
 
   &:hover {
-    background-color: var(--yellow-hover-color);
+    background-color: var(--light-color);
 
     &::before {
       opacity: 1;

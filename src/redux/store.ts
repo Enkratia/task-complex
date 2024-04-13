@@ -2,13 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from "react-redux";
 
 import { backendApi } from "./backendApi";
-import menuBtn from "./menuBtnSlice/slice";
+import cart from "./cartSlice/slice";
 import toast from "./toastSlice/slice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      menuBtn,
+      cart,
       toast,
       [backendApi.reducerPath]: backendApi.reducer,
     },

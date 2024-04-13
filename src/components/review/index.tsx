@@ -23,8 +23,7 @@ export const Review: React.FC<ReviewProps> = ({ review }) => {
 
   const html = review.text;
 
-  // **
-  React.useEffect(() => {
+  const showHideBtn = () => {
     if (!articleRef.current) return;
 
     const articleSH = articleRef.current.scrollHeight;
@@ -34,6 +33,19 @@ export const Review: React.FC<ReviewProps> = ({ review }) => {
     }
 
     setIsBtnVisible(false);
+  };
+
+  // **
+  React.useEffect(() => {
+    window.addEventListener("resize", showHideBtn);
+
+    return () => {
+      window.removeEventListener("resize", showHideBtn);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    showHideBtn();
   });
 
   React.useEffect(() => {
@@ -56,12 +68,6 @@ export const Review: React.FC<ReviewProps> = ({ review }) => {
   const onBtnClick = () => {
     setIsBtnActive((b) => !b);
   };
-
-  // const html =
-  //   "ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf fjeiow foweijf jfoeiw jfoewi jf0oewjo ofeilwffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf fjeiow foweijf jfoeiw jfoewi jf0oewjo ofeilw ";
-
-  // const html =
-  //   "ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j 0fjew0 jif32i f0weji 0fj32 0fjiwdo fijwe0fji 230fj odij fowejif o32jio0fj doifj eo2jf ewijf 2jf0 jew fij2 ijfodsj f02j foewij f32j9f 0ejosf 2390jf ffweioj ofewijo wefjfeo ij 29f ejwof0j3 20j9 f0ewji f023j";
 
   return (
     <div className={s.rootWrapper}>

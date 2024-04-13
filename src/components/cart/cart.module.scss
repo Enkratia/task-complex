@@ -2,6 +2,10 @@
 
 .root {
   padding-top: rem(243);
+
+  @include bp-down("container-wide") {
+    padding-top: calc(rem(137.41) + 6.83vw); // 243>162
+  }
 }
 
 .container {
@@ -10,33 +14,136 @@
   padding-top: rem(14);
   padding-left: rem(14);
   background-color: var(--light-gray-color);
+
+  @include bp-down("500") {
+    padding-top: rem(22);
+    padding-bottom: rem(12);
+    padding-left: rem(10);
+  }
 }
 
 .title {
   margin: 0;
   margin-bottom: rem(18);
   font: var(--title-font);
+
+  @include bp-down("500") {
+    margin-bottom: rem(28);
+    text-align: center;
+  }
 }
 
 .products {
   list-style: none;
   margin: 0;
-  margin-bottom: rem(15);
+  margin-bottom: rem(22);
   padding: 0;
+
+  @include bp-down("500") {
+    margin-bottom: rem(42);
+  }
 }
 
 .product {
+  // grid-template-columns: 10.7fr 3fr 22fr;
   display: grid;
-  grid-template-columns: 10.7fr 3fr 22fr;
+  grid-template-columns: rem(202) rem(56) 1fr;
   gap: rem(5);
+
+  &Sum {
+    border-top: rem(1) solid var(--background-color);
+    padding-top: rem(7);
+  }
 
   &:not(:last-child) {
     margin-bottom: rem(13);
   }
+
+  @include bp-down("container") {
+    grid-template-columns: calc(rem(110.37) + 8.5vw) rem(56) 1fr; // 202>141(1077>360)
+  }
 }
 
 .data {
+  display: block;
   align-self: self-start;
+  overflow: hidden;
   margin: 0;
   font: var(--body-font);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// **
+.more {
+  display: flex;
+  margin-top: rem(-10);
+  margin-bottom: rem(22);
+  border: rem(1) solid var(--background-color);
+  border-radius: rem(8);
+  padding-top: rem(2);
+  padding-bottom: rem(2);
+  padding-inline: rem(8);
+  font: var(--tooltip-big-font);
+  color: var(--light-color);
+  background-color: var(--background-color);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &Text {
+    margin-right: rem(5);
+  }
+
+  &Active {
+    svg {
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }
+
+  svg {
+    width: rem(18);
+    height: rem(18);
+  }
+
+  &:focus {
+    color: var(--background-color);
+    background-color: transparent;
+  }
+}
+
+// **
+.form {
+  display: flex;
+  align-items: center;
+
+  @include bp-down("678") {
+    flex-wrap: wrap;
+  }
+
+  @include bp-down("500") {
+    justify-content: center;
+  }
+}
+
+.input {
+  &Wrapper {
+    margin-right: rem(17);
+
+    @include bp-down("678") {
+      margin-right: initial;
+      margin-bottom: rem(8);
+      max-width: rem(340);
+    }
+  }
+}
+
+.btn {
+  @include bp-down("440") {
+    width: 100%;
+
+    &Wrapper {
+      width: 100%;
+    }
+  }
 }

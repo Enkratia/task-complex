@@ -11,14 +11,12 @@ export const NotFoundPage: React.FC = () => {
     <div className={s.root}>
       <Wrong />
 
-      <h2 className={`${s.title} ${cs.sectionTitle}`}>Page not found</h2>
+      <h2 className={`${s.title} ${cs.sectionTitle}`}>Страница не найдена</h2>
 
-      <span className={s.subtitle}>
-        We&apos;re sorry, the page you requested could not be found.
-      </span>
+      <span className={s.subtitle}>К сожалению, запрашиваемая страница недоступна</span>
 
-      <Link href="/" className={`${cs.btn} ${cs.btnMid} ${cs.btnOutline}`}>
-        Home page
+      <Link href="/" className={`${cs.btn} ${cs.btnLight}`}>
+        На главную
       </Link>
     </div>
   );

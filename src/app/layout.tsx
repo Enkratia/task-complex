@@ -2,13 +2,11 @@ import React from "react";
 
 import {
   Header,
-  // AuthProvider,
   StoreProvider,
-  //   Footer,
 
-  //   // **
-  //   ToastLayout,
-  //   ScrollToTop,
+  // **
+  ToastLayout,
+  ScrollToTop,
 } from "../components";
 
 import "./globals.scss";
@@ -22,13 +20,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
     <html lang="en">
       <body>
         <StoreProvider>
-          {/* <AuthProvider> */}
-          {/* <ToastLayout /> */}
-          {/* <ScrollToTop /> */}
+          <ToastLayout />
+          <ScrollToTop />
           <Header />
           {children}
-          {/* <Footer /> */}
-          {/* </AuthProvider> */}
         </StoreProvider>
       </body>
     </html>

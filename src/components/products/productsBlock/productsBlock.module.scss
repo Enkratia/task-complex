@@ -1,0 +1,37 @@
+@use "../../../scss/utils" as *;
+
+.root {
+  padding-top: rem(46);
+  padding-bottom: rem(388);
+
+  @include bp-down("container-wide") {
+    padding-bottom: calc(rem(178.13) + 13.57vw); // 388>227
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  gap: rem(35);
+
+  @include bp-down("896") {
+    gap: rem(20);
+  }
+
+  @include bp-down("768") {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: rem(25);
+  }
+
+  @include bp-down("678") {
+    gap: rem(15);
+  }
+
+  @include bp-down("500") {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

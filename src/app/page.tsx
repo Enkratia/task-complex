@@ -1,12 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
 
-import { Cart, Reviews } from "../components";
+import { Cart, Products, Reviews } from "../components";
 
 import cs from "../scss/helpers.module.scss";
 
 export const metadata: Metadata = {
   title: "Тестовое задание",
+  description: "Тестовое задание для 'O-комплекс'",
 };
 
 const Home: React.FC = () => {
@@ -16,13 +17,9 @@ const Home: React.FC = () => {
 
       <Reviews />
       <Cart />
+      <Products />
     </main>
   );
 };
 
 export default Home;
-
-// **
-// await new Promise((resolve) => {
-//   setTimeout(() => resolve(""), 6000);
-// });

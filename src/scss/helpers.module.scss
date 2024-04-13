@@ -64,13 +64,8 @@
     }
 
     @include bp-down("container-narrow") {
-      // max-width + 30*2(margin-inline) + 20(scrollbar)
       margin-inline: rem(28);
     }
-
-    // @include bp-down("992") {
-    //   margin-inline: rem(28);
-    // }
 
     @include bp-down("576") {
       margin-inline: rem(14);
@@ -78,56 +73,18 @@
   }
 }
 
-.title {
-  // margin: 0;
-  // font: var(--h2-font);
-  // letter-spacing: rem(-2);
-  // color: var(--black-color);
-
-  // @include bp-down("container") {
-  //   font-size: calc(rem(25.49) + 0.78vw); // 36>28 (1340>320)
-  // }
-}
-
 // **
 .input {
   outline: none;
-  border: rem(1) solid var(--mediumgray05-color);
-  border-radius: rem(2);
-  padding-right: rem(86);
-  padding-left: rem(24);
-  padding-block: rem(23);
+  border: rem(1) solid var(--background-color);
+  border-radius: rem(15);
+  padding-block: rem(11);
+  padding-inline: rem(14);
   width: 100%;
-  font: var(--body01-font);
-  color: inherit;
-  background-color: var(--light-color);
-  transition: border-color 0.3s;
-
-  &Message {
-    display: none;
-    margin-top: rem(5);
-    font: var(--validation-font);
-    line-height: 100%;
-    text-align: left;
-    color: var(--danger-color);
-  }
-
-  &SelectSvg {
-    position: absolute;
-    right: rem(66);
-    top: 50%;
-    width: rem(20);
-    height: rem(20);
-    stroke: var(--black-color);
-    transform: translateY(-50%) rotate(180deg);
-    transform-origin: center;
-
-    &Active {
-      @extend .inputSelectSvg;
-
-      transform: translateY(-50%) rotate(0);
-    }
-  }
+  font: var(--title-font);
+  color: var(--light-color);
+  background-color: var(--background-color);
+  transition: border-color 0.3s, background-color 0.3s;
 
   &Wrapper {
     position: relative;
@@ -142,18 +99,7 @@
 
       >.input {
         border-color: var(--danger-color);
-      }
-
-      .inputWrapperInner {
-        position: relative;
-
-        >.input {
-          border-color: var(--danger-color);
-        }
-      }
-
-      >.inputMessage {
-        display: block;
+        background-color: var(--danger-color);
       }
     }
   }
@@ -171,14 +117,15 @@
 
 .btn {
   display: inline-block;
-  border: rem(1) solid var(--yellow-color);
-  padding-top: rem(17);
+  border: rem(2) solid var(--background-color);
+  border-radius: rem(15);
+  padding-top: rem(13);
   padding-bottom: rem(15);
-  padding-inline: rem(48);
-  font: var(--btn-font);
-  color: var(--black-color);
-  background-color: var(--yellow-color);
-  transition: opacity 0.3s;
+  padding-inline: rem(55);
+  font: var(--title-font);
+  color: var(--light-color);
+  background-color: var(--background-color);
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s;
   cursor: pointer;
 
   &:disabled {
@@ -186,48 +133,35 @@
     pointer-events: none;
   }
 
-  &Message {
-    @extend .inputMessage;
-  }
-
   &Wrapper {
     position: relative;
-
-    // **
-    &[data-auth-message] {
-      .btnMessage {
-        display: block;
-        color: var(--danger-color);
-      }
-    }
-
-    // **
-    &[data-request-success] {
-      .btnMessage {
-        display: block;
-        color: var(--success-color);
-      }
-    }
-
-    &[data-request-warning] {
-      .btnMessage {
-        display: block;
-        color: var(--danger-color);
-      }
-    }
-
-    &[data-request-process] {
-      .btnMessage {
-        display: block;
-        color: var(--black-color);
-      }
-    }
   }
 
   &:hover {
-    border: rem(1) solid var(--yellow-hover-color);
-    background-color: var(--yellow-hover-color);
-    transition: background-color 0.3s;
+    color: var(--background-color);
+    background-color: transparent;
+  }
+
+  &:focus {
+    color: var(--background-color);
+    background-color: transparent;
+  }
+
+  &Light {
+    color: var(--background-color);
+    background-color: var(--light-color);
+
+    &:hover {
+      border-color: var(--light-color);
+      color: var(--light-color);
+      background-color: transparent;
+    }
+
+    &:focus {
+      border-color: var(--light-color);
+      color: var(--light-color);
+      background-color: transparent;
+    }
   }
 }
 
@@ -255,27 +189,11 @@
     transition: opacity 0.2s;
   }
 
-  &Message {
-    @extend .inputMessage;
-  }
-
   &Wrapper {
     text-align: left;
 
     &Active {
       text-align: left;
-
-      // .checkbox {
-      //   border-color: var(--danger-color);
-      // }
-
-      // .checkboxWrapperInner {
-      //   position: relative;
-
-      //   >.checkbox {
-      //     border-color: var(--danger-color);
-      //   }
-      // }
 
       >.checkboxMessage {
         display: block;

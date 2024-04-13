@@ -1,0 +1,38 @@
+@use "../../../scss/utils/" as *;
+
+.root {
+  padding-top: rem(44);
+  width: 100%;
+}
+
+.list {
+  display: flex;
+
+  @include bp-down("678") {
+    flex-wrap: wrap;
+  }
+}
+
+.item {
+  overflow: hidden;
+  border-radius: rem(15);
+  width: 50%;
+  height: rem(465);
+
+  &:first-child {
+    margin-right: rem(34);
+
+    @include bp-down("768") {
+      margin-right: rem(20);
+    }
+
+    @include bp-down("678") {
+      margin-right: revert;
+      margin-bottom: rem(20);
+    }
+  }
+
+  @include bp-down("678") {
+    width: 100%;
+  }
+}
