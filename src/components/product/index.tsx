@@ -80,7 +80,9 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
       </Link>
 
       <div className={s.text}>
-        <h3 className={s.title}>{product.title}</h3>
+        <Link href={`/product/${product.id}`} className={s.titleLink}>
+          <h3 className={s.title}>{product.title}</h3>
+        </Link>
 
         <p className={s.descr}>{product.description}</p>
 
