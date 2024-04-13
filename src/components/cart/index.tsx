@@ -30,6 +30,8 @@ const FormSchema = z.object({
 type InputType = z.infer<typeof FormSchema>;
 
 export const Cart: React.FC = () => {
+  const [phoneDefaultValue, setPhoneDefaultValue] = React.useState("");
+
   const [isMore, setIsMore] = React.useState(false);
 
   const [isStorageChecked, setIsStorageChecked] = React.useState(false);
@@ -54,16 +56,20 @@ export const Cart: React.FC = () => {
 
   // **
   React.useEffect(() => {
-    const lsCart = window.localStorage.getItem("cart");
+    const lsCart = window.localStorage.getItem("o-complex-cart");
     const lsCartParsed = lsCart ? JSON.parse(lsCart) : [];
 
     dispatch(setProducts(lsCartParsed));
     setIsStorageChecked(true);
+
+    // **
+    const lsPhone = window.localStorage.getItem("o-complex-phone");
+    lsPhone && setPhoneDefaultValue(lsPhone);
   }, []);
 
   React.useEffect(() => {
     if (isCartChanged) {
-      window.localStorage.setItem("cart", JSON.stringify(cart));
+      window.localStorage.setItem("o-complex-cart", JSON.stringify(cart));
     }
   }, [cart, isCartChanged]);
 
@@ -95,6 +101,7 @@ export const Cart: React.FC = () => {
 
   const onPhoneValidation = (value: string) => {
     setValue("phone", value, { shouldValidate: !!submitCount });
+    window.localStorage.setItem("o-complex-phone", getValues().phone);
   };
 
   const onMoreClick = () => {
@@ -164,7 +171,7 @@ export const Cart: React.FC = () => {
             mask="+7 (000) 000 00-00"
             name="phone"
             placeholder="+7 (___) ___ __-__"
-            defaultValue=""
+            defaultValue={phoneDefaultValue}
             onPhoneValidation={onPhoneValidation}
           />
 

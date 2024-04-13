@@ -34,6 +34,7 @@ export const FormPhoneInput: React.FC<FormPhoneInputProps> = ({
   return (
     <div className={`${classNameWrapper} ${error ? cs.inputWrapperActive : cs.inputWrapper}`}>
       <IMaskInput
+        key={defaultValue}
         ref={phoneRef}
         mask={mask}
         onAccept={(value: string) => onPhoneValidation(value)}
